@@ -19,21 +19,21 @@ if deg_file and dataset_file:
     ensembl_ids = ensembl_id['Ensembl_ID']
     
     # Display First Few Ensembl IDs
-    st.header("First Few Ensembl IDs")
-    st.dataframe(ensembl_ids.head())
+    st.header("Gene File Ensembl IDs")
+    st.dataframe(ensembl_ids)
 
     # Filter Dataset
     regulated_genes = dataset[dataset['Ensembl_ID'].isin(ensembl_ids)]
     regulated_genes = regulated_genes.set_index('Ensembl_ID')
 
     # Display Filtered Genes
-    st.header("Regulated Genes")
+    st.header("Created Counts Dataset")
     st.dataframe(regulated_genes)
 
     # Save Option
     st.download_button(
         label="Download Filtered Genes",
         data=regulated_genes.to_csv(index=True),
-        file_name='regulated_genes.csv',
+        file_name='Dataset.csv',
         mime='text/csv'
     )
