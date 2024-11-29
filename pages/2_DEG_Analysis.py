@@ -43,7 +43,7 @@ if racial_dataset:
             counts=counts_data,
             metadata=metadata,
             design_factors="Condition",
-            n_cpus=2
+            n_cpus=-1
         )
         dds.deseq2()
         stat_res = DeseqStats(dds, contrast=("label", "cancer", "normal"))
