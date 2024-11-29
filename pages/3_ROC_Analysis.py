@@ -20,7 +20,6 @@ if upregulated_file and combined_dataset_file:
     geneID = data.iloc[:,0]
     features_df = data.iloc[:,1:]
     data = data.set_index("Ensembl_ID")
-    data = data.round().astype(int)
     data = data.T
     data['label'] = ['cancer' if '-01' in sample else 'normal' for sample in data.index]
     
