@@ -9,5 +9,4 @@ matplotlib==3.9.2
 imbalanced-learn==0.12.3
 scipy==1.14.1
 statsmodels==0.14.4
-pip==24.3.1
 openpyxl==3.1.5
