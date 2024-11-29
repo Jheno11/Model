@@ -17,8 +17,8 @@ if racial_dataset:
         data = pd.read_csv(racial_dataset, low_memory=True)
     elif racial_dataset.name.endswith(".xlsx"):
         data = pd.read_excel(racial_dataset, engine="openpyxl")
-    data.fillna(0, inplace=True)
-    data.round(inplace=True)
+    data = data.fillna(0)
+    data = data.round()
     data = data[data.sum(axis=1) > 0]
     data = data.astype(np.int32)
     data = data.T
