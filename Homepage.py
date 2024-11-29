@@ -22,6 +22,7 @@ st.markdown("""
     }
     .stMarkdown {
         color: #FFFFFF;
+        font-size: 10em;
     }
     .stInfo {
         background-color: #e6f3ff;
@@ -65,12 +66,12 @@ def main():
         2. **DEG Analysis** 📊
             - Intelligent Data Refinement
             - Molecular Pattern Recognition
-        3. **ROC Analysis** ✨
+        3. **ROC Analysis** 📈
             - Comprehensive Gene Screening
             - Predictive Marker Identification
-        3. **Dataset Creation** ✨
+        3. **Dataset Creation** 📅
             - Create data for machine learning modelling
-        4. **Modelling** ✨
+        4. **Modelling** 🤖
             -  Machine Learning Modelling
     """)
 
