@@ -123,8 +123,8 @@ def main():
         with creator_cols[i]:
             st.markdown(f"""
             <div class="creator-card" style="
-                background-color: #2c2c2c; 
-                color: #e0e0e0; 
+                background-color: #0d1117; 
+                color: #57b1ff; 
                 border-radius: 10px; 
                 padding: 15px; 
                 box-shadow: 0 4px 6px rgba(0,0,0,0.3);
