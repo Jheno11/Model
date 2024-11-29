@@ -9,7 +9,7 @@ from imblearn.combine import SMOTEENN, SMOTETomek
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
 
 # App Title
-st.title("SVM with Balancing Methods and Hyperparameters")
+st.title("SVM with Balancing and Hyperparameters")
 
 # Upload dataset
 uploaded_file = st.file_uploader("Upload your dataset (.csv or .xlsx)", type=["csv", "xlsx"])
@@ -72,14 +72,13 @@ if uploaded_file:
         "Sampling Strategy (proportion of the minority class)", 
         min_value=0.1, max_value=10.0, value=0.3, step=0.1
     )
-    random_state = st.number_input("Random State", min_value=0, value=42)
 
     # Hyperparameter tuning
     use_hyperparameter_tuning = st.radio("Use Hyperparameter Tuning?", options=['Yes', 'No'], index=1)
     param_grid = {
         'kernel': ['poly', 'rbf', 'linear'],
-        'C': [0.001, 0.01, 0.1, 1, 10, 100],
-        'gamma': [0.0001, 0.001, 0.01, 0.1, 1],
+        'C': [0.1, 1, 10],
+        'gamma': [0.01, 0.1, 1],
         'coef0': [0, 1],
         'class_weight': [None, 'balanced'],
         'probability': [True]
@@ -96,21 +95,21 @@ if uploaded_file:
 
         # Dynamically create balancing method instances
         if method_name == 'RandomOverSampler':
-            balancing_method = RandomOverSampler(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = RandomOverSampler(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'SVMSMOTE':
-            balancing_method = SVMSMOTE(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = SVMSMOTE(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'SMOTEENN':
-            balancing_method = SMOTEENN(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = SMOTEENN(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'SMOTETomek':
-            balancing_method = SMOTETomek(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = SMOTETomek(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'ADASYN':
-            balancing_method = ADASYN(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = ADASYN(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'BorderlineSMOTE':
-            balancing_method = BorderlineSMOTE(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = BorderlineSMOTE(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'KMeansSMOTE':
-            balancing_method = KMeansSMOTE(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = KMeansSMOTE(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == 'SMOTEN':
-            balancing_method = SMOTEN(random_state=random_state, sampling_strategy=sampling_strategy)
+            balancing_method = SMOTEN(random_state=42, sampling_strategy=sampling_strategy)
         elif method_name == "No Balancing":
             balancing_method = "No Balancing"
 
