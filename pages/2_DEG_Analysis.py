@@ -17,6 +17,8 @@ if racial_dataset:
         data = pd.read_csv(racial_dataset)
     elif racial_dataset.name.endswith(".xlsx"):
         data = pd.read_excel(racial_dataset, engine="openpyxl")
+        data = pd.read_excel(racial_dataset, engine="openpyxl")
+    data = data.set_index("Ensembl_ID")
     data = data.fillna(0)
     data = data.round().astype(np.int32)
     data = data[data.sum(axis=1) > 0]
