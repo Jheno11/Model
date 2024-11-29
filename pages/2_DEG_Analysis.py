@@ -9,18 +9,17 @@ st.title("Differential Gene Expression Analysis with PyDESeq2")
 
 # File Uploads
 st.header("Input Files")
-racial_dataset = st.file_uploader("Upload Phenotype Data (.csv OR .xlsx)", type=["csv", "xlsx"])
+racial_dataset = st.file_uploader("Upload Data (.csv OR .xlsx)", type=["csv", "xlsx"])
 
 if racial_dataset:
     st.write("Processing dataset....")
     if racial_dataset.name.endswith(".csv"):
-        data = pd.read_csv(racial_dataset, low_memory=True)
+        data = pd.read_csv(racial_dataset)
     elif racial_dataset.name.endswith(".xlsx"):
         data = pd.read_excel(racial_dataset, engine="openpyxl")
     data = data.fillna(0)
-    data = data.round()
+    data = data.round().astype(np.int32)
     data = data[data.sum(axis=1) > 0]
-    data = data.astype(np.int32)
     data = data.T
 
     st.write("Preprocessed Counts Data")
