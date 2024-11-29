@@ -119,21 +119,21 @@ def main():
     creators = [
         {
             "name": "Jheno Syechlo",
-            "nim": "00000067872",
+            "nim": "NIM : 00000067872",
             "role": "Data Scientist",
             "expertise": "Machine Learning",
             "image": "🛠️"
         },
         {
             "name": "Adithama Mulia",
-            "nim": "00000067958",
+            "nim": "NIM : 00000067958",
             "role": "Lead Developer",
             "expertise": "Machine Learning",
             "image": "💻"
         },
         {
             "name": "Vincent Kurniawan",
-            "nim": "00000068404",
+            "nim": "NIM : 00000068404",
             "role": "Data Scientist",
             "expertise": "Machine Learning",
             "image": "🔬"
@@ -151,8 +151,8 @@ def main():
                 box-shadow: 0 4px 6px rgba(0,0,0,0.3);
                 border: 1px solid #444;
             ">
-                <h3 style="color: #f0f0f0; margin-bottom: 10px;">{creator['image']} {creator['name']}</h3>
-                <h3 style="color: #f0f0f0; margin-bottom: 10px;">{creator['nim']}</h3>
+                <h3 style="color: #f0f0f0;">{creator['image']} {creator['name']}</h3>
+                <p style="color: #f0f0f0; margin-bottom: 10px;">{creator['nim']}</p>
                 <p style="margin: 5px 0;"><strong style="color: #a0a0a0;">Role:</strong> {creator['role']}</p>
                 <p style="margin: 5px 0;"><strong style="color: #a0a0a0;">Expertise:</strong> {creator['expertise']}</p>
             </div>
