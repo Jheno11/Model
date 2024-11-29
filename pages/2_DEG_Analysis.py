@@ -23,18 +23,13 @@ if racial_dataset:
 
     # Create Metadata
     def create_metadata(counts_data):
-        metadata = pd.DataFrame(index=counts_data.index)
-        metadata['label'] = [
-            'cancer' if '-01' in sample else 'normal' for sample in metadata.index
-        ]
+        conditions = ['cancer' if '-01' in sample else 'normal' for sample in counts_data.index]
+        metadata = pd.DataFrame({'Ensembl_ID': counts_data.index, 'Condition': conditions})
+        metadata = metadata.set_index('Ensembl_ID')
         return metadata
 
     metadata = create_metadata(data)
     st.write("Metadata", metadata)
-
-    # DEG Analysis
-    st.header("DEG Analysis")
-    contrast_choice = st.radio("Select Contrast for Analysis", ["cancer", "normal"])
 
     def initiate_deg(counts_data, metadata):
         dds = DeseqDataSet(
