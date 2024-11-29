@@ -52,11 +52,11 @@ if racial_dataset:
     # Filter DEG Results
     st.header("DEG Filtering Options")
     cutoff_padj = st.number_input("Cutoff for padj", value=0.05)
-    cutoff_log2FoldChange = st.number_input("Cutoff for log2FoldChange", value=0)
+    cutoff_log2FoldChange = st.number_input("Cutoff for log2FoldChange", value=0.0)
     cutoff_baseMean = st.number_input("Cutoff for baseMean", value=10)
-    cutoff_pvalue = st.number_input("Cutoff for pvalue", value=0)
-    cutoff_lfcSE = st.number_input("Cutoff for lfcSE", value=0)
-    cutoff_stat = st.number_input("Cutoff for stat", value=0)
+    cutoff_pvalue = st.number_input("Cutoff for pvalue", value=0.0)
+    cutoff_lfcSE = st.number_input("Cutoff for lfcSE", value=0.0)
+    cutoff_stat = st.number_input("Cutoff for stat", value=0.0)
 
     def filter_deg_results(deg_results):
         deg_results = deg_results[deg_results['padj'] < cutoff_padj]
