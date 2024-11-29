@@ -9,7 +9,7 @@ from imblearn.combine import SMOTEENN, SMOTETomek
 from sklearn.metrics import accuracy_score, classification_report, f1_score, precision_score, recall_score
 
 # App Title
-st.title("Logistic Regression with Balancing Methods and Hyperparameters")
+st.title("Logistic Regression with Balancing and Hyperparameters")
 
 # Upload dataset
 uploaded_file = st.file_uploader("Upload your dataset (.csv or .xlsx)", type=["csv", "xlsx"])
