@@ -46,7 +46,7 @@ if racial_dataset:
             n_cpus=-1
         )
         dds.deseq2()
-        stat_res = DeseqStats(dds, contrast=("label", "cancer", "normal"))
+        stat_res = DeseqStats(dds, contrast=("Condition", "cancer", "normal"))
         stat_res.summary()
         return stat_res.results_df
 
