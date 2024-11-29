@@ -7,13 +7,12 @@ from sklearn.metrics import roc_curve, auc
 
 st.title("Gene ROC Analysis")
 
-# Sidebar for file uploads
-st.sidebar.header("Input Files")
-upregulated_file = st.sidebar.file_uploader("Upload UpRegulated Dataset", type=['csv', 'xlsx'])
-combined_dataset_file = st.sidebar.file_uploader("Upload Combined Dataset", type=['csv', 'xlsx'])
+st.header("Input Files")
+upregulated_file = st.file_uploader("Upload UpRegulated Dataset", type=['csv', 'xlsx'])
+combined_dataset_file = st.file_uploader("Upload Combined Dataset", type=['csv', 'xlsx'])
 
 # ROC Curve AUC Threshold
-auc_threshold = st.sidebar.slider("AUC Threshold", min_value=0.5, max_value=1.0, value=0.9, step=0.05)
+auc_threshold = st.slider("AUC Threshold", min_value=0.5, max_value=1.0, value=0.9, step=0.05)
 
 if upregulated_file and combined_dataset_file:
     # Load data
