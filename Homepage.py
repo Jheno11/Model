@@ -151,7 +151,7 @@ def main():
                 box-shadow: 0 4px 6px rgba(0,0,0,0.3);
                 border: 1px solid #444;
             ">
-                <h3 style="color: #f0f0f0; margin-bottom: -10px;">{creator['image']} {creator['name']}</h3>
+                <h3 style="color: #f0f0f0; margin-bottom: -15px;">{creator['image']} {creator['name']}</h3>
                 <h3 style="color: #f0f0f0; ">{creator['nim']}</h3>
                 <p style="margin: 5px 0;"><strong style="color: #a0a0a0;">Role:</strong> {creator['role']}</p>
                 <p style="margin: 5px 0;"><strong style="color: #a0a0a0;">Expertise:</strong> {creator['expertise']}</p>
