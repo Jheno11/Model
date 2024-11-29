@@ -20,7 +20,7 @@ if racial_dataset:
         data = pd.read_excel(racial_dataset, dtype="int32")
 
     # Preprocessing
-    data.set_index("Ensembl_ID", inplace=True)
+    data.set_index("Ensembl_ID")
     data.fillna(0, inplace=True)
     data = data.round().astype("int32")
     data = data[data.sum(axis=1) > 0]
