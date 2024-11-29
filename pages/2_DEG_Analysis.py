@@ -23,7 +23,7 @@ if racial_dataset:
     data = data.T
 
     st.write("Preprocessed Counts Data")
-    st.dataframe(data)
+    st.dataframe(data.head(5))
 
     # Create Metadata
     def create_metadata(counts_data):
