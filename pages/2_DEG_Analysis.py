@@ -23,7 +23,7 @@ if racial_dataset:
     data = data.T
 
     st.write("Preprocessed Counts Data")
-    st.dataframe(data.head(5))
+    st.dataframe(data)
 
     # Create Metadata
     def create_metadata(counts_data):
@@ -33,13 +33,14 @@ if racial_dataset:
         return metadata
 
     metadata = create_metadata(data)
-    st.write("Metadata", metadata)
+    st.write("Metadata")
+    st.dataframe(metadata)
 
     def initiate_deg(counts_data, metadata):
         dds = DeseqDataSet(
             counts=counts_data,
             metadata=metadata,
-            design_factors="label"
+            design_factors="Condition"
         )
         dds.deseq2()
         stat_res = DeseqStats(dds, contrast=("label", "cancer", "normal"))
