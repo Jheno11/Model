@@ -56,24 +56,6 @@ def main():
     # Bright Title
     st.title("🧬 Optimized Feature Selection for Cancer Detection")
 
-    # App Features
-    st.markdown("### 💻 App Features")
-    st.markdown("""
-        1. **Data Segregation** 🔍
-            - Precision phenotype processing
-            - Targeted racial demographic analysis
-        2. **DEG Analysis** 📊
-            - Intelligent Data Refinement
-            - Molecular Pattern Recognition
-        3. **ROC Analysis** 📈
-            - Comprehensive Gene Screening
-            - Predictive Marker Identification
-        3. **Dataset Creation** 📅
-            - Create data for machine learning modelling
-        4. **Modelling** 🤖
-            -  Machine Learning Modelling
-    """)
-
     # Workflow Section
     st.markdown("### 🌟 Advanced Genomic Exploration Platform")
 
@@ -101,6 +83,24 @@ def main():
         - Advanced Genomic Insights
         - Machine Learning Integration
         """)
+
+    # App Features
+    st.markdown("### 💻 App Features")
+    st.markdown("""
+        1. **Data Segregation** 🔍
+            - Precision phenotype processing
+            - Targeted racial demographic analysis
+        2. **DEG Analysis** 📊
+            - Intelligent Data Refinement
+            - Molecular Pattern Recognition
+        3. **ROC Analysis** 📈
+            - Comprehensive Gene Screening
+            - Predictive Marker Identification
+        3. **Dataset Creation** 📅
+            - Create data for machine learning modelling
+        4. **Modelling** 🤖
+            -  Machine Learning Modelling
+    """)
 
     # Future Work Section
     st.markdown("### 🔮 Future Directions")
