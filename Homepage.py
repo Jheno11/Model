@@ -22,7 +22,6 @@ st.markdown("""
     }
     .stMarkdown {
         color: #FFFFFF;
-        font-size: 10em;
     }
     .stInfo {
         background-color: #e6f3ff;
